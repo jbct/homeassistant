@@ -12,6 +12,10 @@ Home Assistant Version: 0.51.2
 * [Google WiFi](http://a.co/eMbEdaW) x3
 * [Amazon Echo](http://a.co/ad2QTtT)
 * [Arlo Cameras](http://a.co/4PlBC4t) x2
-* [iOS App] (https://home-assistant.io/ecosystem/ios/)  (iOS Device Tracking)
+* [iOS App](https://home-assistant.io/ecosystem/ios/)  (iOS Device Tracking)
+
+# Automations
+* IFTTT - Rain delay Rachio if AccuWeather reports rain tomorrow
+* IFTTT - Stop watering Rachio if AccuWeather wind speed > 20 mph
 
 # Interface
