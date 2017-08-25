@@ -1,0 +1,45 @@
+  - platform: google_wifi
+  - platform: arlo
+  - platform: ring
+    monitored_conditions:
+      - last_activity
+      - last_ding
+      - last_motion
+  - platform: darksky
+    api_key: !secret darksky_apikey
+    monitored_conditions:
+      - summary
+      - temperature
+      - apparent_temperature
+      - humidity
+      - wind_speed
+      - precip_type
+      - precip_intensity
+      - precip_probability
+    update_interval:
+      minutes: 10
+  - platform: time_date
+    display_options:
+    - 'time'
+    - 'date'
+  - platform: rest
+    resource: https://pypi.python.org/pypi/homeassistant/json
+    name: HA Current Version
+    value_template: '{{ value_json.info.version }}'
+  - platform: cpuspeed
+    name: CPU
+  - platform: systemmonitor
+    resources:
+      - type: memory_free
+      - type: memory_use_percent
+      - type: processor_use
+      - type: since_last_boot
+  - platform: rest
+    resource: http://ip.jsontest.com
+    name: external_ip
+    value_template: '{{ value_json.ip }}'
+  - platform: template
+    sensors:
+      holidays_calendar:
+        friendly_name: 'Holiday'
+        value_template: '{{ states.calendar.holidays_in_united_states.attributes.message }}'    

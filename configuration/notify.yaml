@@ -1,0 +1,4 @@
+- platform: webostv
+  host: !secret lgtv_ip
+  name: livingroom_tv
+  

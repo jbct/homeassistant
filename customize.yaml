@@ -1,0 +1,3 @@
+sensors.holidays_calendar:
+  icon: mdi:calendar
+  friendly_name: Upcoming Holiday

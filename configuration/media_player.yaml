@@ -1,0 +1,2 @@
+  - platform: webostv
+    host: !secret lgtv_ip
