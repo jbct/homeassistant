@@ -7,6 +7,8 @@ Home Assistant Version: 0.63.0
 * [Amazon Echo](http://a.co/ad2QTtT)
 * [Arlo Cameras](http://a.co/4PlBC4t) x2
 * [August Smart Lock](http://a.co/4VjhLAA)
+* August Connect
+* Chamberlain MyQ
 * [Google WiFi](http://a.co/eMbEdaW) x3
 * [Nest Thermostat](http://a.co/cIfktL6) x2
 * [Philips Hue Color Starter Kit](http://a.co/6AaeDYC) (comes with 3 lights + Hue Hub)
@@ -26,11 +28,14 @@ Home Assistant Version: 0.63.0
 * etc
 
 # To Buy
-* August Connect
-* Chamberlain MyQ
 * Wink Hub
 * Philips Hue Switch x2
+* Cree lights
 * ? Wall switches
-* ? Motion sensor
+* ? Motion sensors
 
 # Interface
+
+# Credit
+* [Home Assistant](https://home-assistant.io) - Amazing open source project that powers this all
+* [Carlo Costanzo](https://github.com/CCOSTAN/Home-AssistantConfig) - One of my favorite Home Assistant projects. I've based my setup on his.
