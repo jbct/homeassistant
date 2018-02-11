@@ -1,7 +1,7 @@
 # Home Assistant
 James' [Home Assistant](https://home-assistant.io) Config
 
-Home Assistant Version: 0.51.2
+Home Assistant Version: 0.63.0
 
 # Devices
 * [Amazon Echo](http://a.co/ad2QTtT)
