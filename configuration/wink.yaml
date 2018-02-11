@@ -1,2 +1,0 @@
-email: !secret wink_email
-password: !secret wink_password
