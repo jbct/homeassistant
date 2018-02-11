@@ -6,37 +6,136 @@ homeassistant:
   elevation: !secret elevation
   unit_system: imperial
   time_zone: America/Chicago
-  customize: !include customize.yaml
+  customize: !include_dir_merge_named customize
+  customize_domain:
+    automation:
+      initial_state: 'on'
+  customize_glob:
+    "sensor.dark_sky_*":
+      homebridge_hidden: true
 
-updater:
+  packages: !include_dir_named packages
+
+config:
+cloud:
+  alexa:
+    filter:
+      include_domains:  
+        - switch
+        - cover
+        - input_boolean
+http:
+  server_port: !secret http_port
+  api_password: !secret http_pwd
+  trusted_networks:
+    - !secret http_range
+    - 127.0.0.1
+    - ::1
+  ip_ban_enabled: True
+  login_attempts_threshold: 3
+
+frontend:
+  javascript_version: latest
+
+panel_custom:
+  - name: floorplan
+    sidebar_title: Floorplan
+    sidebar_icon: mdi:home
+    url_path: floorplan
+    config: !include floorplan.yaml
+
 discovery:
   ignore:
     - directv
+
+updater:
+  reporting: no
+  include_used_components: true
+
 sun:
-config:
-logbook:
-history:
-frontend:
+
+hue:
+  bridges:
+    - host: 192.168.86.22
+      filename: phue.conf
+      allow_unreachable: true
+      allow_hue_groups: false
+
+ifttt:
+  key: !secret ifttt_apikey
+
 ios:
-recorder:
+
+logbook:
+  exclude:
+    entities:
+      - sensor.time
+      - sensor.date
+      - sensor.ha_uptime
+      - sensor.ha_last_reboot
+      - sensor.ring_front_door_last_activity
+      - sensor.ring_front_door_last_ding
+      - sensor.ring_front_door_last_motion
+      - sensor.ring_last_motion
+      - sensor.ring_last_ding
+      - binary_sensor.downstairs_thermostat_has_leaf
+      - binary_sensor.upstairs_thermostat_has_leaf
+    domains:
+      - group
+
+history:
+  include:
+    domains:
+      - sensor
+      - switch
+      - media_player
+      - light
+      - binary_sensor
+      - cover
+  exclude:
+    entities:
+      - sensor.date
+      - sensor.time
+      - sensor.ha_uptime
+      - sensor.last_boot
+    domains:
+      - updater
+      - camera
+      - script
+      - sun
+      - automation
+      - zone
+      - input_boolean
+
+recorder: !include recorder.yaml
+logger: !include logger.yaml
+
+nest:
+  client_id: !secret nest_clientid
+  client_secret: !secret nest_clientsecret
+
+climate:
+  platform: nest
+
+ffmpeg:
+zwave:
+  usb_path: /dev/ttyUSB0
+
 automation: !include_dir_merge_list automation
 
-arlo: !include .\configuration\arlo.yaml
-binary_sensor: !include .\configuration\binary_sensor.yaml
-camera: !include .\configuration\camera.yaml
-climate: !include .\configuration\climate.yaml
-device_tracker: !include .\configuration\device_tracker.yaml
-google: !include .\configuration\google.yaml
-group: !include .\configuration\group.yaml
-http: !include .\configuration\http.yaml
-ifttt: !include .\configuration\ifttt.yaml
-input_boolean: !include .\configuration\input_boolean.yaml
-input_select: !include .\configuration\input_select.yaml
-media_player: !include .\configuration\media_player.yaml
-nest: !include .\configuration\nest.yaml
-notify: !include .\configuration\notify.yaml
-ring: !include .\configuration\ring.yaml
-sensor: !include .\configuration\sensor.yaml
-switch: !include .\configuration\switch.yaml
-tts: !include .\configuration\tts.yaml
-wink: !include .\configuration\wink.yaml
+arlo: !include ./configuration/arlo.yaml
+binary_sensor: !include ./configuration/binary_sensor.yaml
+camera: !include ./configuration/camera.yaml
+device_tracker: !include ./configuration/device_tracker.yaml
+cover: !include ./configuration/cover.yaml
+google: !include ./configuration/google.yaml
+group: !include ./configuration/group.yaml
+input_boolean: !include ./configuration/input_boolean.yaml
+input_select: !include ./configuration/input_select.yaml
+media_player: !include ./configuration/media_player.yaml
+notify: !include ./configuration/notify.yaml
+ring: !include ./configuration/ring.yaml
+sensor: !include ./configuration/sensor.yaml
+switch: !include ./configuration/switch.yaml
+tts: !include ./configuration/tts.yaml
+zone: !include ./configuration/zones.yaml

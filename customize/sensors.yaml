@@ -1,0 +1,59 @@
+sensors.holidays_calendar:
+  icon: mdi:calendar
+  friendly_name: Upcoming Holiday
+
+sensor.dark_sky_temperature:
+  friendly_name: Current Temperature
+sensor.dark_sky_humidity:
+  friendly_name: Humidity
+sensor.dark_sky_precip_intensity:
+  friendly_name: Intensity
+sensor.dark_sky_wind_speed:
+  friendly_name: Wind Speed
+sensor.dark_sky_pressure:
+  friendly_name: Pressure
+sensor.dark_sky_summary:
+  friendly_name: Weather Summary
+  order: 1
+sensor.dark_sky_precip_probability:
+  friendly_name: Rain Chance
+sensor.dark_sky_apparent_temperature:
+  friendly_name: Feels Like
+sensor.dark_sky_precip:
+  friendly_name: Precipitation
+
+sensor.upstairs_thermostat_humidity:
+  friendly_name: Upstairs Humidity
+  order: 7
+sensor.upstairs_thermostat_hvac_state:
+  friendly_name: Upstairs State
+sensor.upstairs_thermostat_operation_mode:
+  friendly_name: Upstairs Mode
+sensor.upstairs_thermostat_target:
+  friendly_name: Upstairs Setting
+sensor.upstairs_thermostat_temperature:
+  friendly_name: Upstairs Temp
+  order: 6
+sensor.downstairs_thermostat_humidity:
+  friendly_name: Downstairs Humidity
+  order: 5
+sensor.downstairs_thermostat_hvac_state:
+  friendly_name: Downstairs State
+sensor.downstairs_thermostat_operation_mode:
+  friendly_name: Downstairs Mode
+sensor.downstairs_thermostat_target:
+  friendly_name: Downstairs Setting
+sensor.downstairs_thermostat_temperature:
+  friendly_name: Downstairs Temp
+  order: 4
+
+sensor.battery_level_driveway:
+  friendly_name: Arlo Driveway
+  icon: mdi:cctv
+sensor.battery_level_roof:
+  friendly_name: Arlo Roof
+  icon: mdi:cctv
+
+sensor.google_wifi_status:
+  friendly_name: Google Wifi Status
+  icon: mdi:wifi

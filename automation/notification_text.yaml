@@ -1,0 +1,68 @@
+- alias: Notification - New version of Home Assistant
+  trigger:
+    - platform: state
+      entity_id: sensor.current_ha_release
+  action:
+    - service: notify.pushbullet_home
+      data:
+        title: "New Home Assistant Release"
+        message: "Home Assistant {{ states.sensor.current_ha_release.state }} is now available."
+
+- alias: Notification - Nest has gone into away mode
+  trigger:
+    - platform: state
+      entity_id: sensor.downstairs_thermostat_away_mode
+      from: 'off'
+      to: 'on'
+    - platform: state
+      entity_id: sensor.upstairs_thermostat_away_mode
+      from: 'off'
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: sensor.downstairs_thermostat_away_mode
+      state: 'on'
+    - condition: state
+      entity_id: sensor.upstairs_thermostat_away_mode
+      state: 'on'
+  action:
+    - service: notify.pushbullet_home
+      data:
+        title: "Home Assistant"
+        message: "Nests have entered away mode"
+
+- alias: Notification - Nest has gone into home mode
+  trigger:
+    - platform: state
+      entity_id: sensor.downstairs_thermostat_away_mode
+      from: 'on'
+      to: 'off'
+    - platform: state
+      entity_id: sensor.upstairs_thermostat_away_mode
+      from: 'on'
+      to: 'off'
+  condition:
+    - condition: state
+      entity_id: sensor.downstairs_thermostat_away_mode
+      state: 'off'
+    - condition: state
+      entity_id: sensor.upstairs_thermostat_away_mode
+      state: 'off'
+  action:
+    - service: notify.pushbullet_home
+      data:
+        title: "Home Assistant"
+        message: "Nests have exited away mode"
+
+- alias: Notification - Garage open for 30min
+  trigger:
+    - platform: state
+      entity_id: cover.garage_door_opener
+      to: 'open'
+      for:
+        minutes: 30
+  action:
+    - service: notify.pushbullet_home
+      data:
+        title: "Home Assistant"
+        message: "The garage door has been open for 30 minutes."

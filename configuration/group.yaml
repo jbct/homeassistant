@@ -1,0 +1,131 @@
+default_view:
+  view: yes
+  name: Burke Home
+  entities:
+    - sensor.dark_sky_summary
+    - device_tracker.jamesiphonelan
+    - device_tracker.rebeccaiphonelan
+    - sensor.downstairs_thermostat_temperature
+    - sensor.downstairs_thermostat_humidity
+    - sensor.upstairs_thermostat_temperature
+    - sensor.upstairs_thermostat_humidity
+    - group.presence
+    - group.date_time
+    - group.garage
+    - group.batteries
+    - group.upstairs
+    - group.downstairs
+    - group.lights
+    - group.media
+    - group.devices
+    - group.sprinklers
+    - group.weather
+    - group.holidays
+lights_tab:
+  view: yes
+  name: Lights
+  entities:
+  - group.lights  
+lights:
+  name: Lights
+  entities:
+    - light.back_patio_light
+    - light.downstairs_hall_light
+    - light.front_porch_light
+    - light.laundry_room_light
+    - light.upstairs_hall_light_1
+    - light.upstairs_hall_light_2
+media:
+  view: yes
+  name: Media Players
+  entities:
+  - media_player.downstairs_tv
+  - media_player.lg_webos_smart_tv
+presence:
+  name: Presence
+  entities:
+    - device_tracker.kaitlynpodtouchlan
+    - device_tracker.haileyspodtouchlan
+garage:
+  name: Garage
+  entities:
+    - cover.garage_door_opener
+date_time:
+  name: Date Time
+  entities:
+    - sensor.time
+    - sensor.date
+    - sensor.current_ha_release
+    - sensor.installed_ha_version
+    - sensor.ha_uptime
+settings:
+  view: yes
+  name: Settings
+  entities:
+    - updater.updater
+    - group.override
+    - group.system_monitor
+    - group.devices
+downstairs:
+  name: Downstairs
+  entities:
+    - climate.downstairs
+    - sensor.downstairs_thermostat_hvac_state
+    - sensor.downstairs_thermostat_humidity
+    - binary_sensor.downstairs_thermostat_fan
+upstairs:
+  name: Upstairs
+  entities:
+  - climate.upstairs
+  - sensor.upstairs_thermostat_hvac_state
+  - sensor.upstairs_thermostat_humidity
+  - binary_sensor.upstairs_thermostat_fan
+batteries:
+  name: Batteries
+  entities:
+    - sensor.james_iphone_battery_level
+    - sensor.battery_level_driveway
+    - sensor.battery_level_roof
+devices:
+  name: Devices
+  entities:
+  - sensor.google_wifi_status
+  - binary_sensor.upstairs_thermostat_online
+  - binary_sensor.downstairs_thermostat_online
+  - device_tracker.xboxsystemoslan
+  - media_player.lg_webos_smart_tv
+sprinklers:
+  name: Sprinklers
+  entities:
+  - switch.rachioc72165
+  - switch.west_lawn
+  - switch.front_shrubs
+  - switch.main_lawn  
+  - switch.curb_and_east_lawn
+  - switch.back_yard
+cameras:
+  view: yes
+  name: Cameras
+  entities:
+  - camera.front_door
+  - camera.driveway
+  - camera.roof
+weather:
+  name: Weather
+  entities:
+  - sensor.dark_sky_temperature
+  - sensor.dark_sky_humidity
+  - sensor.dark_sky_apparent_temperature
+  - sensor.dark_sky_precip
+  - sensor.dark_sky_precip_intensity
+  - sensor.dark_sky_precip_probability
+  - sensor.dark_sky_wind_speed
+holidays:
+  name: Holiday Modes
+  entities:
+  - sensor.holidays_calendar
+  - input_select.holiday
+  - input_boolean.interior_holiday
+  - input_boolean.upstairs_rainbow
+  - input_boolean.front_porch_rainbow
+  - input_boolean.back_porch_rainbow 

@@ -1,0 +1,19 @@
+- alias: Notification Visual - Front Door Motion
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.ring_front_door_motion
+      to: 'on'
+  action:
+    - service: notify.livingroom_tv
+      data:
+        message: "Motion detected: Front Door"
+
+- alias: Notification Visual - Front Door Ring
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.ring_front_door_ding
+      to: 'on'
+  action:
+    - service: notify.livingroom_tv
+      data:
+        message: "Doorbell pressed: Front Door"

@@ -1,0 +1,4 @@
+binary_sensor.downstairs_thermostat_online:
+  friendly_name: Downstairs Nest
+binary_sensor.upstairs_thermostat_online:
+  friendly_name: Upstairs Nest

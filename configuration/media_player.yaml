@@ -1,2 +1,3 @@
   - platform: webostv
     host: !secret lgtv_ip
+  - platform: plex

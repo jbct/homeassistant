@@ -1,0 +1,17 @@
+device_tracker.rebeccaiphonelan:
+  entity_picture: /local/images/rebecca.jpg
+  friendly_name: Rebecca
+  order: 3
+device_tracker.jamesiphonelan:
+  entity_picture: /local/images/james.jpg
+  friendly_name: James
+  order: 2
+device_tracker.kaitlynpodtouchlan:
+  entity_picture: /local/images/kaitlyn.jpg
+  friendly_name: Kaitlyn
+device_tracker.haileyspodtouchlan:
+  entity_picture: /local/images/hailey.jpg
+  friendly_name: Hailey
+device_tracker.xboxsystemoslan:
+  friendly_name: Xbox One
+  icon: mdi:xbox

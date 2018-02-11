@@ -1,0 +1,22 @@
+group.presence:
+  order: 1
+group.date_time:
+  order: 2
+group.devices:
+  order: 3
+group.batteries:
+  order: 4
+group.downstairs: 
+  order: 5
+group.upstairs: 
+  order: 6
+group.weather:
+  order: 7
+group.garage:
+  order: 8
+group.lights:
+  order: 9
+group.sprinklers:
+  order: 10
+group.holidays:
+  order: 11

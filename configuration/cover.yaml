@@ -1,0 +1,4 @@
+- platform: myq
+  username: !secret wink_email
+  password: !secret wink_password
+  type: chamberlain

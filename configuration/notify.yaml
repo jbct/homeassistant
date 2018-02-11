@@ -1,4 +1,6 @@
 - platform: webostv
   host: !secret lgtv_ip
   name: livingroom_tv
-  
+- name: pushbullet_home
+  platform: pushbullet
+  api_key: !secret pushbullet_apikey   

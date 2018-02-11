@@ -1,0 +1,15 @@
+front_porch_rainbow:
+  name: Front Porch Random Color
+  icon: mdi:power
+back_porch_rainbow:
+  name: Back Porch Random Color
+  icon: mdi:power
+upstairs_rainbow:
+  name: Upstairs Random Color
+  icon: mdi:power
+disable_exterior_on_sunset:
+  name: Disable Exterior Lights On at Sunset
+  icon: mdi:weather-sunset-down
+interior_holiday:
+  name: Interior Holiday Lighting
+  icon: mdi:gift  

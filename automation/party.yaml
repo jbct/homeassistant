@@ -1,0 +1,77 @@
+##################################################################
+## Party Mode Automations
+##################################################################
+
+        ##########################################################
+        ## Living Room Random Colors
+        ##########################################################
+
+- alias: Party - Set Upstairs to Random Color
+
+  trigger:
+    - platform: time
+      minutes: '/2'
+      seconds: 0
+
+  condition:
+    - condition: state
+      entity_id: input_boolean.upstairs_rainbow
+      state: 'on'
+
+  action:
+    - service: light.turn_on
+      entity_id:
+        - light.upstairs_hall_light_1
+        - light.upstairs_hall_light_2
+      data:
+        effect: random
+        transition: 5
+        brightness: 255
+
+        ##########################################################
+        ## Front Porch Random Colors
+        ##########################################################
+
+- alias: Party - Set Front Porch to Random Color
+
+  trigger:
+    - platform: time
+      minutes: '/2'
+      seconds: 0
+
+  condition:
+    - condition: state
+      entity_id: input_boolean.front_porch_rainbow
+      state: 'on'
+
+  action:
+    - service: light.turn_on
+      entity_id: light.front_porch_light
+      data:
+        effect: random
+        transition: 5
+        brightness: 255
+
+        ##########################################################
+        ## Back Porch Random Colors
+        ##########################################################
+
+- alias: Party - Set Back Porch to Random Color
+
+  trigger:
+    - platform: time
+      minutes: '/2'
+      seconds: 0
+
+  condition:
+    - condition: state
+      entity_id: input_boolean.back_porch_rainbow 
+      state: 'on'
+
+  action:
+    - service: light.turn_on
+      entity_id: light.back_patio_light
+      data:
+        effect: random
+        transition: 5
+        brightness: 255

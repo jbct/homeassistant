@@ -1,0 +1,91 @@
+- alias: Lights - Exterior lights on 5min before sunset
+  trigger:
+    - platform: sun
+      event: 'sunset'
+      offset: '-00:05:00'
+  action:
+    - service: light.turn_on
+      entity_id: 
+      - light.front_porch_light
+      - light.back_patio_light
+      data:
+        brightness: 254
+
+- alias: Lights - Exterior lights dim at 9:00pm
+  trigger:
+    - platform: time
+      at: '21:00:00'
+  action:
+    - service: light.turn_on
+      entity_id: 
+      - light.front_porch_light
+      - light.back_patio_light
+      data:
+        transition: 60
+        brightness: 85
+
+- alias: Lights - Exterior lights off 30min after sunrise
+  trigger:
+   - platform: sun
+     event: sunrise
+     offset: "00:30:00"
+  action:
+    - service: light.turn_off
+      entity_id: 
+      - light.front_porch_light
+      - light.back_patio_light
+      data:
+       transition: 60
+
+- alias: Lights - Hallway to correct color temp
+  trigger:
+    - platform: state
+      entity_id: light.downstairs
+      from: 'off'
+      to: 'on'
+  action:
+    - service: light.turn_on
+      entity_id:
+        - light.downstairs_hall_light
+        - light.laundry_room_light
+      data:
+        kelvin: 2700
+        brightness: 254
+
+- alias: Lights - Upstairs on before bedtime
+  trigger:
+    - platform: time
+      at: '19:00:00'
+  action:
+    - service: light.turn_on
+      entity_id:
+        - light.upstairs_hall_light_1
+        - light.upstairs_hall_light_2
+      data:
+        kelvin: 2700
+        brightness_pct: 80
+
+- alias: Lights - Upstairs dim down at bedtime
+  trigger:
+    - platform: time
+      at: '19:20:00'
+  action:
+    - service: light.turn_on
+      entity_id:
+        - light.upstairs_hall_light_1
+        - light.upstairs_hall_light_2
+      data:
+        transition: 800
+        brightness_pct: 20
+
+- alias: Lights - Upstairs off after bedtime
+  trigger:
+    - platform: time
+      at: '20:59:00'
+  action:
+    - service: light.turn_off
+      entity_id:
+        - light.upstairs_hall_light_1
+        - light.upstairs_hall_light_2
+      data:
+        transition: 60

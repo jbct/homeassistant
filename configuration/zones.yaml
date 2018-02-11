@@ -1,0 +1,23 @@
+- name: Home
+  latitude: !secret latitude
+  longitude: !secret longitude
+  radius: 300
+  icon: mdi:home
+
+- name: Work_James
+  latitude: !secret work_latitude
+  longitude: !secret work_longitude
+  radius: 450
+  icon: mdi:domain
+
+- name: Target
+  latitude: !secret target_latitude
+  longitude: !secret target_longitude
+  radius: 200
+  icon: mdi:target
+
+- name: School
+  latitude: !secret school_latitude
+  longitude: !secret school_longitude
+  radius: 150
+  icon: mdi:school
